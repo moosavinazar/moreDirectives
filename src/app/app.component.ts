@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {IUser} from "./interfaces/app-interface";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'moreDirectives';
+  user: IUser = {
+    name: 'hasan',
+    age: 40
+  }
 }
