@@ -8,7 +8,19 @@ import {IUser} from "../interfaces/app-interface";
 })
 export class UserComponent implements OnInit {
 
-  @Input() user!: IUser;
+  private _user!: IUser;
+
+  @Input()
+  set user(user: IUser){
+    this._user = user;
+    this.counter++;
+  }
+
+  get user(): IUser {
+    return this._user;
+  }
+
+  counter: number = 0;
 
   constructor() { }
 
