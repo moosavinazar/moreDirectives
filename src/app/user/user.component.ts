@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {IUser} from "../interfaces/app-interface";
 
 @Component({
@@ -6,7 +6,7 @@ import {IUser} from "../interfaces/app-interface";
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent implements OnInit {
+export class UserComponent implements OnInit, OnChanges {
 
   private _user!: IUser;
 
@@ -26,6 +26,11 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.user);
+  }
+
+  ngOnChanges() {
+    this._user = this.user;
+    this.counter++;
   }
 
 }
